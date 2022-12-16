@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="appDeliveryXamarin.Vista.MenuPrincipal.MainMenu">
+             x:Class="appDeliveryXamarin.Vista.MenuPrincipal.MainMenu"
+             xmlns:vistas="clr-namespace:appDeliveryXamarin.Vista.MenuPrincipal">
     <Grid>
         <CollectionView>
+            <CollectionView.Header>
+                <vistas:ViewHeaderMenu />
+            </CollectionView.Header>
             <CollectionView.ItemsLayout>
                 <GridItemsLayout 
                     Span="2"
@@ -12,9 +16,13 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    
+                    <vistas:ViewBodyMenu />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        
+        <vistas:ViewFooterMenu>
+            
+        </vistas:ViewFooterMenu>
     </Grid>
 </ContentPage>
