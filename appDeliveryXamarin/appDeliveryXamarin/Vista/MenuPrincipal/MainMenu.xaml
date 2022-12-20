@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="appDeliveryXamarin.Vista.MenuPrincipal.MainMenu"
              xmlns:vistas="clr-namespace:appDeliveryXamarin.Vista.MenuPrincipal">
-    <Grid>
-        <CollectionView>
+    <Grid BackgroundColor="#E0E0E0">
+        <CollectionView ItemsSource="{Binding ListaPlatos}">
             <CollectionView.Header>
                 <vistas:ViewHeaderMenu />
             </CollectionView.Header>

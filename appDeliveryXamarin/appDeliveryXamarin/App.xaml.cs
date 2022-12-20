@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using appDeliveryXamarin.Vista.MenuPrincipal;
 
 namespace appDeliveryXamarin
 {
@@ -10,7 +11,7 @@ namespace appDeliveryXamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainMenu();
         }
 
         protected override void OnStart()

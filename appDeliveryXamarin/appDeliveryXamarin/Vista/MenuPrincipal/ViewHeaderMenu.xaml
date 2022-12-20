@@ -2,9 +2,25 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="appDeliveryXamarin.Vista.MenuPrincipal.ViewHeaderMenu">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
+    <Grid>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="5,10,5,0">
+                <Frame HasShadow="False" CornerRadius="60"
+                       >
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/5372/5372882.png" HeightRequest="25"/>
+                </Frame>
+                <Label Text="Delibery"
+                       HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       TextColor="#546E7A"
+                       VerticalOptions="Center"
+                       FontSize="22"/>
+                <Frame HasShadow="False"
+                       CornerRadius="60">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/4202/4202835.png"
+                           HeightRequest="25" />
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
 </ContentView>

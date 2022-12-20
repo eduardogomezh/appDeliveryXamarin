@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using appDeliveryXamarin.VistaModelo;
 
 namespace appDeliveryXamarin.Vista.MenuPrincipal
 {
@@ -15,6 +16,7 @@ namespace appDeliveryXamarin.Vista.MenuPrincipal
         public MainMenu()
         {
             InitializeComponent();
+            BindingContext = new VMmainMenu(Navigation);
         }
     }
 }

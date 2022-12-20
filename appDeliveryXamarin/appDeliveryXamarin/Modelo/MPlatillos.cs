@@ -6,8 +6,8 @@ namespace appDeliveryXamarin.Modelo
 {
     public class MPlatillos
     {
-        public string descripcion { get; set; }
-        public string precio { get; set; }
-        public string icon { get; set; }
+        public string Descripcion { get; set; }
+        public string Precio { get; set; }
+        public string Icon { get; set; }
     }
 }
