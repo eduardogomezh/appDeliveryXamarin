@@ -21,6 +21,43 @@
                            HeightRequest="25" />
                 </Frame>
             </StackLayout>
+            <Frame CornerRadius="50" HasShadow="False" Padding="10" Margin="10">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/954/954591.png" HeightRequest="22"/>
+                    <Label VerticalOptions="Center" HorizontalOptions="FillAndExpand" TextColor="DarkCyan" FontAttributes="Bold" Text="Search"/>
+                    <Frame CornerRadius="50" HasShadow="False" Padding="10">
+                        <Frame.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#FE87A5"
+                                              Offset="0.5" />
+                                <GradientStop Color="#ED6285"
+                                              Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Filter" FontSize="15" FontAttributes="Bold" Margin="0,0,10,0"/>
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/9222/9222631.png" HeightRequest="22"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+            <Grid Margin="10" HeightRequest="140">
+                <Frame CornerRadius="50" HorizontalOptions="StartAndExpand" Padding="9" HasShadow="False">
+                    <Frame.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#BBA6F6" Offset="0.5"/>
+                            <GradientStop Color="#B664ff"
+                                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <StackLayout>
+                        <Frame CornerRadius="50" HasShadow="False">
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" HeightRequest="30"/>
+                        </Frame>
+                        <Label Text="Burguer" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" VerticalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
         </StackLayout>
     </Grid>
 </ContentView>
