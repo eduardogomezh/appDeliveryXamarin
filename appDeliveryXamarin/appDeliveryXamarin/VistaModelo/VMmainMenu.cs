@@ -15,12 +15,14 @@ namespace appDeliveryXamarin.VistaModelo
         #region VARIABLES
         string _Texto;
         ObservableCollection<MPlatillos> _listaPlatos;
+        ObservableCollection<MCategorias> _listarCategorias;
         #endregion
         #region CONSTRUCTOR
         public VMmainMenu(INavigation navigation)
         {
             Navigation = navigation;
             ListarPlatos();
+            ListarCategorias();
         }
         #endregion
         #region OBJETOS
@@ -36,6 +38,12 @@ namespace appDeliveryXamarin.VistaModelo
             set { SetValue(ref _listaPlatos, value); }
         }
 
+        public ObservableCollection<MCategorias> ListaCategorias
+        {
+            get { return _listarCategorias; }
+            set { SetValue(ref _listarCategorias, value); }
+        }
+
         #endregion
         #region PROCESOS
        
@@ -44,7 +52,13 @@ namespace appDeliveryXamarin.VistaModelo
             var funcion = new Dplatillos();
             ListaPlatos = funcion.ListarPlatos();
         }
-        #endregion
+
+        public void ListarCategorias()
+        {
+            var funcion = new DCategorias();
+            ListaCategorias = funcion.Mostrarcategorias();
+        }
+            #endregion
         #region COMANDOS
        // public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
        
