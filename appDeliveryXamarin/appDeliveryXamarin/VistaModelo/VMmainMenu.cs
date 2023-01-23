@@ -3,10 +3,12 @@ using appDeliveryXamarin.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace appDeliveryXamarin.VistaModelo
 {
@@ -46,7 +48,6 @@ namespace appDeliveryXamarin.VistaModelo
 
         #endregion
         #region PROCESOS
-       
         public void ListarPlatos()
         {
             var funcion = new Dplatillos();
@@ -58,10 +59,35 @@ namespace appDeliveryXamarin.VistaModelo
             var funcion = new DCategorias();
             ListaCategorias = funcion.Mostrarcategorias();
         }
-            #endregion
+
+        private void Seleccionar(MCategorias parametros)
+        {
+            var index = ListaCategorias
+                .ToList().FindIndex(p => p.Nombre == parametros.Nombre);
+            if (index > -1)
+            {
+                Deseleccionar();
+                ListaCategorias[index].Select = true;
+                ListaCategorias[index].Color1 = "#8664ff";
+                ListaCategorias[index].Color2 = "#bba8ff";
+                ListaCategorias[index].TexColor = "#ffffff";
+            }
+        }
+
+        private void Deseleccionar()
+        {
+            ListaCategorias.ForEach((item) =>
+            {
+                item.Select = false;
+                item.Color1 = "#ffffff";
+                item.Color2 = "#ffffff";
+                item.TexColor = "#2f394b";
+            });
+        }
+        #endregion
         #region COMANDOS
-       // public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
-       
+         public ICommand Seleccionarcommand => new Command<MCategorias>(Seleccionar);
+
         #endregion
     }
 

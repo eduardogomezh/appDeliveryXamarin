@@ -41,7 +41,7 @@
                     </Frame>
                 </StackLayout>
             </Frame>
-            <CollectionView ItemsSource="{Binding ListaCategorias}" HeightRequest="150">
+            <CollectionView ItemsSource="{Binding ListaCategorias}"  x:Name="listaCategorias" HeightRequest="150">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
@@ -73,6 +73,10 @@
                                            VerticalOptions="Center" />
                                 </StackLayout>
                             </Frame>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path=BindingContext.Seleccionarcommand,Source={x:Reference listaCategorias}}" 
+                                                      CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -20,9 +20,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        
-        <vistas:ViewFooterMenu>
-            
-        </vistas:ViewFooterMenu>
+        <vistas:ViewFooterMenu VerticalOptions="End"/>
     </Grid>
 </ContentPage>

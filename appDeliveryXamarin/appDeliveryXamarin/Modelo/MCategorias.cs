@@ -14,7 +14,13 @@ namespace appDeliveryXamarin.Modelo
         String _color1;
         String _color2;
         String _textColor;
+        Boolean _select;
 
+        public Boolean Select
+        {
+            get { return _select; }
+            set { SetValue(ref _select, value); }
+        }
         public string Color1
         {
             get { return _color1; }
