@@ -41,23 +41,42 @@
                     </Frame>
                 </StackLayout>
             </Frame>
-            <Grid Margin="10" HeightRequest="140">
-                <Frame CornerRadius="50" HorizontalOptions="StartAndExpand" Padding="9" HasShadow="False">
-                    <Frame.Background>
-                        <LinearGradientBrush>
-                            <GradientStop Color="#BBA6F6" Offset="0.5"/>
-                            <GradientStop Color="#B664ff"
-                                          Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Frame.Background>
-                    <StackLayout>
-                        <Frame CornerRadius="50" HasShadow="False">
-                            <Image Source="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" HeightRequest="30"/>
-                        </Frame>
-                        <Label Text="Burguer" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" VerticalOptions="Center"/>
-                    </StackLayout>
-                </Frame>
-            </Grid>
+            <CollectionView ItemsSource="{Binding ListaCategorias}" HeightRequest="150">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10">
+                            <Frame CornerRadius="50"
+                                   HorizontalOptions="StartAndExpand"
+                                   Padding="9"
+                                   HasShadow="False">
+                                <Frame.Background>
+                                    <LinearGradientBrush BindingContext="{Binding Source={RelativeSource AncestorType={x:Type Frame}},Path=BindingContext}">
+                                        <GradientStop Color="{Binding Color1}"
+                                                      Offset="0.5" />
+                                        <GradientStop Color="{Binding Color2}"
+                                                      Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <StackLayout>
+                                    <Frame CornerRadius="50"
+                                           HasShadow="False">
+                                        <Image Source="{Binding Icon}"
+                                               HeightRequest="30" />
+                                    </Frame>
+                                    <Label Text="{Binding Nombre}"
+                                           HorizontalOptions="Center"
+                                           TextColor="{Binding TexColor}"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center" />
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </Grid>
 </ContentView>
